@@ -1,0 +1,12 @@
+User (Browser)
+      |
+      |  HTTPS / HTTP request
+      v
+DNS (www.foobar.com → 8.8.8.8)
+      |
+      v
+Single Server (8.8.8.8)
+   ├── Nginx (Web server)
+   ├── Application Server
+   ├── Application Code (website files)
+   └── MySQL Database

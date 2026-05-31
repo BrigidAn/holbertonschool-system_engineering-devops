@@ -1,0 +1,20 @@
+                User (Browser)
+                       |
+                       | HTTPS/HTTP request
+                       v
+                Load Balancer (HAproxy)
+                 (Round Robin algorithm)
+                   /               \
+                  /                 \
+        Server 1                    Server 2
+   ┌───────────────┐          ┌───────────────┐
+   │ Nginx         │          │ Nginx         │
+   │ App Server    │          │ App Server    │
+   │ App Files     │          │ App Files     │
+   └──────┬────────┘          └──────┬────────┘
+          |                          |
+          └──────────┬──────────────┘
+                     |
+              Primary MySQL DB
+                     |
+              Replica MySQL DB

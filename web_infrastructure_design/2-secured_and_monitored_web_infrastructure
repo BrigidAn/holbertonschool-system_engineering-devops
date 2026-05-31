@@ -1,0 +1,25 @@
+                    User
+                     |
+              HTTPS (443)
+                     |
+            SSL terminated here
+                     |
+            Load Balancer (HAproxy)
+              + SSL Certificate
+                     |
+        ┌────────────┴────────────┐
+        |                         |
+   Firewall 1               Firewall 2
+        |                         |
+   Server 1                Server 2
+ (Web/App)               (Web/App)
+        |                         |
+   Firewall 3 (DB layer protection)
+                |
+           MySQL Server
+                |
+         Monitoring System
+     (SumoLogic/Datadog/etc.)
+        ↑        ↑        ↑
+     Agent    Agent    Agent
+   (Server1) (Server2) (DB)

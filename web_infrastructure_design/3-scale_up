@@ -1,0 +1,15 @@
+                    User
+                     |
+                  HTTPS
+                     |
+        ┌────────────────────────┐
+        │  Load Balancer Cluster │
+        │   (HAproxy Active-Active)│
+        └───────────┬────────────┘
+                    |
+     ┌──────────────┼──────────────┐
+     |              |              |
+Firewall 1     Firewall 2     Firewall 3
+     |              |              |
+ Web Server     App Server     Database Server
+ (Nginx)       (App logic)     (MySQL)
